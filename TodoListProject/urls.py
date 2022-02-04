@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from TodoAPP import views
+from django.conf.urls.static import static
+from TodoListProject import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # Auth
+    path('signup/', views.signupuser, name='signupuser'),
+    path('logout/', views.logoutuser, name='logoutuser'),
+    path('login/', views.loginuser, name='loginuser'),
 ]
