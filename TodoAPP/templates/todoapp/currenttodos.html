@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'todoapp/base.html' %}
+
+{% block content %}
+Current
+{% for obj in todos %}
+
+<ul>
+    <li>
+        <a href="{% url 'viewtodo' obj.id %}">
+            {% if obj.important %}
+            <b>
+                {% endif %}
+                {{obj.title}}
+                {% if obj.memo %} - {{ obj.memo }} {% endif %}</b> </a>
+    </li>
+</ul>
+{% endfor %}
+{% endblock %}
+</body>
+</html>
